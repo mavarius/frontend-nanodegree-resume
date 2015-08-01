@@ -4,9 +4,7 @@
 <!--
 This is an HTML document. It contains information about how elements in the website
 are arranged. In other words, it describes the layout of a website.
-
 I can't wait to see the resumes you put together!
-
 Cameron Pittman, Udacity Course Developer
 -->
 
@@ -25,8 +23,20 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 	<title>Resume</title>
 
 	<!-- Load the page styles. -->
-	<link href="css/style.css" rel="stylesheet">
+	<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
 	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:300,600' rel='stylesheet' type='text/css'>
+	<link href="css/style.css" rel="stylesheet">
 
 	<!--
 	jQuery is a common JavaScript library for reading and making changes to the
@@ -41,7 +51,10 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 	the DOM. jQuery is fast and easy to use, but it doesn't do anything
 	you can't accomplish with vanilla (regular) JavaScript.
 	-->
-	<script src="js/jQuery.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script async src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+    <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<!-- More on helper.js in the class -->
 	<script src="js/helper.js"></script>
@@ -62,10 +75,9 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 		resume below. You can pretty easily figure out what each section will
 		display by looking at the id or at what's written between the <h2> tags.
 		-->
-		<div id="header" class="center-content clear-fix">
-			<ul id="topContacts" class="flex-box"></ul>
-		</div>
-		<div style="clear: both;"></div>
+		<header id="header">
+			<ul id="topContacts"></ul>
+		</header>
 		<div id="workExperience" class="">
 			<h2>Work Experience</h2>
 		</div>
@@ -80,7 +92,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 		</div>
 		<div id="lets-connect" class="">
 			<h2 class="center-text">Let's Connect</h2>
-			<ul id="footerContacts" class="flex-box">
+			<ul id="footerContacts">
 			</ul>
 		</div>
 	</div>
