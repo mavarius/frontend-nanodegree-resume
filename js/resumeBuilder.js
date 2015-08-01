@@ -17,15 +17,9 @@ var bio = {
 		'Flash',
 		'Sketch',
 		'Mockups',
-		'Axure',
-		'InVision',
-		'Sketchbook Pro',
 		'HTML5',
 		'CSS3',
-		'JavaScript',
-		'JQuery',
-		'Bootsrap',
-		'Wordpress'
+		'JavaScript'
 	],
 	'biopic' : 'images/me.jpg',
 	'display' : 'function'
@@ -102,13 +96,13 @@ var projects = {
         'title' : 'CogitoTree',
         'dates' : '2015-2015',
         'description' : 'CogitoTree is a story visualization platform for branching and linear stories.',
-        'images' : ['images/CT1.jpg', 'images/CT2.jpg', 'images/CT3.jpg']
+        'images' : ['images/CT2.jpg', 'images/CT3.jpg']
         },
         {
         'title' : 'Project Peon',
         'dates' : '2014-2015',
-        'description' : 'An iPad physics game',
-        'images' : ['images/pp1.jpg', 'images/pp2.jpg', 'images/pp3.jpg']
+        'description' : 'An iPad physics game in which players build carts to try to traverse each level.',
+        'images' : ['images/pp1.jpg', 'images/pp2.jpg']
         }
 	],
     'display' : 'function'
@@ -183,9 +177,10 @@ projects.display = function() {
         $('.project-entry:last').append(formattedProjectDescription);
 
         if (projects.projects[i].images.length > 0) {
+			$('.project-entry:last').append(HTMLprojectImageStart);
             for (image in projects.projects[i].images) {
                 var formattedProjectImages = HTMLprojectImage.replace('%data%', projects.projects[i].images[image]);
-                $('.project-entry:last').append(formattedProjectImages);
+                $('.image-box:last').append(formattedProjectImages);
             }
         }
 	}

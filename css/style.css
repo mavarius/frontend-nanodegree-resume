@@ -11,7 +11,7 @@ h5,
 h6 {
 	padding:0;
 	margin:0;
-	font-family: 'Titillium Web', sans-serif;
+	font: 300 14px 'Titillium Web', sans-serif;
 }
 
 html,
@@ -28,14 +28,40 @@ body {
 .education-entry,
 .work-entry,
 .project-entry {
-	padding: 0 5%;
+	padding: 4%;
+	margin: 4% 2%;
+	border-top: 4px solid orange;
+	border-radius: 2px;
+	max-width: 100vw;
+	background: white;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+}
+
+.project-description {
+	margin: 0 0 5% 0;
+}
+
+.image-box {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	width: 100%;
+}
+
+.project-image {
+	position: relative;
+	max-width: 100%;
+	flex-basis: width auto;
+	object-fit: fill;
+	margin: 5px;
 }
 
 h1 {
-	font-size: 40px;
+	font-size: 2.5em;
 	color: #f5a623;
 	line-height: 48px;
-	display: inline;
+	text-align: center;
+	
 }
 
 h2 {
@@ -49,7 +75,7 @@ h2 {
 h3 {
 	font-style: italic;
 	font-size: 20px;
-	color: #000;
+	color: #999;
 	line-height: 22px;
 }
 
@@ -66,7 +92,6 @@ h4,
 h5 {
 	padding:10px 5%;
 }
-
 
 .date-text {
 	font-style: italic;
@@ -93,7 +118,6 @@ p {
 a {
 	color: #1199c3;
 	text-decoration: none;
-	margin-top: 10px;
 	display: block;
 	}
 
@@ -102,6 +126,8 @@ a {
 	font-size: 18px;
 	color: #f3f3f3;
 	line-height: 28px;
+	margin: 2% 0;
+	display: block; 
 }
 
 #skills-h3 {
@@ -159,41 +185,59 @@ ul {
 	display: none;
 }
 
-img {
-	padding: 10px;
-}
-
-span {
-	padding: 5px;
+.header-role {
+	text-align: center;
+	color: white;
+	font: 300 1.5em 'Titillium Web', sans-serif;
+	display: block;
 }
 
 #lets-connect {
 	text-align: center;
+	background: rgba(0, 0, 0, .2);
+	margin: 10% 0 0 0;
 }
 
+.welcome-message {
+	display: none;
+}
 /* Media queries to handle various device widths */
 
-@media only screen and (max-width: 1024px) {
-	#lets-connect {
-		margin-top: 5%;
+@media only screen and (min-width: 1024px) {
+	.education-entry,
+	.work-entry,
+	.project-entry {
+		padding: 1%;
 	}
 }
 
-@media only screen and (max-width:900px) {
+@media only screen and (min-width: 750px) {
+	#lets-connect {
+		margin-top: 1%;
+	}
 	.biopic {
 		width: 175px;
 	}
+	.welcome-message {
+		display: inline;
+	}
+	h1 {
+		text-align: left;
+		display: inline;
+	}
+	.header-role {
+		display: inline;
+		text-align: left;
+		margin: 0 0 0 10px;
+	}
 }
 
-@media only screen and (max-width: 750px) {
-	#lets-connect {
-		margin-top: 10%;
-	}
-	.biopic {
-		width: 150px;
-	}
-	.welcome-message {
-		display: none;
+@media only screen and (min-width: 600px) {
+	.education-entry,
+	.work-entry,
+	.project-entry {
+		padding: 2%;
+		margin: 2% 1%;
 	}
 }
 
