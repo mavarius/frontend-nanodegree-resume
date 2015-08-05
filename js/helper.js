@@ -15,45 +15,45 @@ replace the %data% placeholder text you see in them.
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span class="header-role">%data%</span><br/>';
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
+var HTMLcontactGeneric = '<li class="flex-item"><span class="sr-only">%contact%</span><span class="contact-info">%data%</span></li>';
+var HTMLmobile = '<li class="flex-item"><i class="fa fa-phone"></i><span class="sr-only">mobile</span><span class="contact-info">%data%</span></li>';
+var HTMLemail = '<li class="flex-item"><i class="fa fa-envelope"></i><span class="sr-only">email</span><span class="contact-info">%data%</span></li>';
+var HTMLtwitter = '<li class="flex-item"><i class="fa fa-twitter"></i><span class="sr-only">twitter</span><span class="contact-info">%data%</span></li>';
+var HTMLgithub = '<li class="flex-item"><i class="fa fa-github"></i><span class="sr-only">github</span><span class="contact-info">%data%</span></li>';
+var HTMLblog = '<li class="flex-item"><i class="fa fa-rss"></i><span class="sr-only">blog</span><span class="contact-info">%data%</span></li>';
+var HTMLlocation = '<li class="flex-item"><i class="fa fa-map-marker"></i><span class="sr-only">location</span><span class="contact-info">%data%</span></li>';
 
-var HTMLbioPic = '<img src="%data%" class="biopic">';
-var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
+var HTMLbioPic = '<div class="biopic-box col-xs-4 col-xs-offset-1 col-sm-4 col-sm-offset-1 col-md-3 col-md-offset-2 col-lg-2 col-lg-offset-3"><img src="%data%" class="biopic"></div>';
+var HTMLheaderIntro = '<div id="headerIntro" class="col-xs-7 col-xs-offset-5 col-sm-7 col-sm-offset-5 col-md-5 col-md-offset-5 col-lg-6 col-lg-offset-5"></div>';
+var HTMLwelcomeMsg = '<span class="welcome-message hidden-xs">%data%</span>';
+var HTMLskillsStart = '<span class="skills"><ul id="skills" class="list-inline"></ul></span>';
+var HTMLskills = '<li class="flex-item"><span class="list-skills">%data%</span></li>';
 
-var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="list-inline"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
-
-var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a href="#">%data%';
-var HTMLworkTitle = ' - %data%</a>';
+var HTMLworkStart = '<div class="work-entry col-xs-12 col-sm-12 col-md-4"><div class="work-entry-inner"></div></div>';
+var HTMLworkEmployer = '<h3 class="entry-title">%data%</h3>';
+var HTMLworkTitle = '<span class="entry-subtitle">%data%</span>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
-var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
+var HTMLprojectStart = '<div class="project-entry col-xs-12 col-sm-12 col-md-12"><div class="project-entry-inner"></div></div>';
+var HTMLprojectTitle = '<h3 class="entry-title">%data%</h3>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p class="project-description"><br>%data%</p>';
-var HTMLprojectImageStart = '<div class="image-box"></div>'
-var HTMLprojectImage = '<img class="project-image" src="%data%">';
+var HTMLprojectImageStart = '<div class="image-box row"></div>'
+var HTMLprojectImage = '<img class="project-image col-xs-12 col-sm-6 col-md-6 col-lg-3" src="%data%">';
 
-var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%';
-var HTMLschoolDegree = ' -- %data%</a>';
+var HTMLschoolStart = '<div class="education-entry col-xs-12 col-sm-12 col-md-4"><div class="education-entry-inner"></div></div>';
+var HTMLschoolName = '<h3 class="entry-title">%data%</h3>';
+var HTMLschoolDegree = '<span class="entry-subtitle">%data%</span>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<em><br>Major: %data%</em>';
 var HTMLschoolURL = '<br><a href="%data%">%data%</a>';
 
-var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#">%data%';
-var HTMLonlineSchool = ' - %data%</a>';
+var HTMLonlineClasses = '<h3 class="section-subtitle">Online Classes</h3>';
+var HTMLonlineTitle = '<h4 class="entry-subtitle">%data%</h4>';
+var HTMLonlineSchool = '<span>%data%</span>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="%data%">%data%</a>';
 
@@ -67,7 +67,7 @@ The International Name challenge in Lesson 2 where you'll create a function that
 $(document).ready(function() {
   $('button').click(function() {
     var iName = inName() || function(){};
-    $('#name').html(iName);  
+    $('#name').html(iName);
   });
 });
 

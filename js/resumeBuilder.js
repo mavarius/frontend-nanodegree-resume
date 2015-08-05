@@ -8,15 +8,13 @@ var bio = {
         'twitter' : '@mavarius',
         'location' : 'Bay Point, CA'
     },
-	'welcomeMessage' : 'I’m a designer and developer proficient in print design, UI design, and front-end code. If what you need is a versatile designer/developer then look no further!',
+	'welcomeMessage' : 'Hi, I&apos;m a designer and developer of print designs, <br>UI designs, and front-end code. Come build with me!',
 	'skills' : [
         'Photoshop',
 		'InDesign',
 		'Illustrator',
 		'Dreamweaver',
 		'Flash',
-		'Sketch',
-		'Mockups',
 		'HTML5',
 		'CSS3',
 		'JavaScript'
@@ -94,15 +92,15 @@ var projects = {
     'projects' : [
         {
         'title' : 'CogitoTree',
-        'dates' : '2015-2015',
-        'description' : 'CogitoTree is a story visualization platform for branching and linear stories.',
-        'images' : ['images/CT2.jpg', 'images/CT3.jpg']
+        'dates' : '2015',
+        'description' : 'CogitoTree is a multi-platform writing environment for game developers and novelists. The backbone of CogitoTree is the Node Tree, a map that give writers the ability to write and visually navigate branching stories.',
+        'images' : ['images/CT1.jpg', 'images/CT2.jpg', 'images/CT3.jpg', 'images/CT4.jpg']
         },
         {
         'title' : 'Project Peon',
         'dates' : '2014-2015',
-        'description' : 'An iPad physics game in which players build carts to try to traverse each level.',
-        'images' : ['images/pp1.jpg', 'images/pp2.jpg']
+        'description' : 'Project Peon is an iPad physics game in which players build carts to try to traverse each level. The game combines free-form physics gameplay with fast paced driving action.',
+        'images' : ['images/pp1.jpg', 'images/pp2.jpg', 'images/pp3.jpg', 'images/pp4.jpg']
         }
 	],
     'display' : 'function'
@@ -112,14 +110,15 @@ var projects = {
 bio.display = function() {
     var formattedBiopic = HTMLbioPic.replace('%data%',bio.biopic);
     $('#header').append(formattedBiopic);
+	$('#header').append(HTMLheaderIntro);
 
     var formattedName = HTMLheaderName.replace('%data%',bio.name);
     var formattedRole = HTMLheaderRole.replace('%data%',bio.role);
     var formattedNameRole = formattedName + formattedRole;
-    $('#header').append(formattedNameRole);
+    $('#headerIntro').append(formattedNameRole);
 
     var formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%',bio.welcomeMessage);
-    $('#header').append(formattedWelcomeMsg);
+    $('#headerIntro').append(formattedWelcomeMsg);
 
     var formattedMobile = HTMLmobile.replace('%data%',bio.contacts.mobile);
     var formattedEmail = HTMLemail.replace('%data%',bio.contacts.email);
@@ -148,16 +147,16 @@ work.display = function() {
 		var formattedWorkEmployer = HTMLworkEmployer.replace('%data%',work.jobs[i].employer);
         var formattedWorkTitle = HTMLworkTitle.replace('%data%',work.jobs[i].title);
         var formattedEmployerTitle = formattedWorkEmployer + formattedWorkTitle;
-		$('.work-entry:last').append(formattedEmployerTitle);
+		$('.work-entry-inner:last').append(formattedEmployerTitle);
 
         var formattedWorkDates = HTMLworkDates.replace('%data%',work.jobs[i].dates);
-		$('.work-entry:last').append(formattedWorkDates);
+		$('.work-entry-inner:last').append(formattedWorkDates);
 
         var formattedWorkLocation = HTMLworkLocation.replace('%data%',work.jobs[i].location);
-		$('.work-entry:last').append(formattedWorkLocation);
+		$('.work-entry-inner:last').append(formattedWorkLocation);
 
         var formattedWorkDescription = HTMLworkDescription.replace('%data%',work.jobs[i].description);
-        $('.work-entry:last').append(formattedWorkDescription);
+        $('.work-entry-inner:last').append(formattedWorkDescription);
 	}
 };
 work.display();
@@ -168,16 +167,16 @@ projects.display = function() {
 		$('#projects').append(HTMLprojectStart);
 
 		var formattedProjectTitle = HTMLprojectTitle.replace('%data%', projects.projects[i].title);
-        $('.project-entry:last').append(formattedProjectTitle);
+        $('.project-entry-inner:last').append(formattedProjectTitle);
 
 		var formattedProjectDates = HTMLprojectDates.replace('%data%', projects.projects[i].dates);
-        $('.project-entry:last').append(formattedProjectDates);
+        $('.project-entry-inner:last').append(formattedProjectDates);
 
 		var formattedProjectDescription = HTMLprojectDescription.replace('%data%', projects.projects[i].description);
-        $('.project-entry:last').append(formattedProjectDescription);
+        $('.project-entry-inner:last').append(formattedProjectDescription);
 
         if (projects.projects[i].images.length > 0) {
-			$('.project-entry:last').append(HTMLprojectImageStart);
+			$('.project-entry-inner:last').append(HTMLprojectImageStart);
             for (image in projects.projects[i].images) {
                 var formattedProjectImages = HTMLprojectImage.replace('%data%', projects.projects[i].images[image]);
                 $('.image-box:last').append(formattedProjectImages);
@@ -195,19 +194,19 @@ education.display = function() {
 		var formattedschoolName = HTMLschoolName.replace('%data%', education.schools[i].name);
         var formattedschoolDegree = HTMLschoolDegree.replace('%data%', education.schools[i].degree);
         var formattedNameDegree = formattedschoolName + formattedschoolDegree;
-        $('.education-entry:last').append(formattedNameDegree);
+        $('.education-entry-inner:last').append(formattedNameDegree);
 
         var formattedschoolDates = HTMLschoolDates.replace('%data%', education.schools[i].dates);
-        $('.education-entry:last').append(formattedschoolDates);
+        $('.education-entry-inner:last').append(formattedschoolDates);
 
         var formattedschoolLocation = HTMLschoolLocation.replace('%data%', education.schools[i].location);
-        $('.education-entry:last').append(formattedschoolLocation);
+        $('.education-entry-inner:last').append(formattedschoolLocation);
 
         var formattedschoolMajor = HTMLschoolMajor.replace('%data%', education.schools[i].majors);
-        $('.education-entry:last').append(formattedschoolMajor);
-		
+        $('.education-entry-inner:last').append(formattedschoolMajor);
+
 		var formattedschoolURL = HTMLschoolURL.replace(/%data%/g,education.schools[i].url);
-		$('.education-entry:last').append(formattedschoolURL);
+		$('.education-entry-inner:last').append(formattedschoolURL);
 	}
     if (education.onlineCourses.length > 0) {
             $('#education').append(HTMLonlineClasses);
@@ -220,13 +219,13 @@ education.display = function() {
             var formattedOnlineSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[i].school);
 
             var formattedTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
-            $('.education-entry:last').append(formattedTitleSchool);
+            $('.education-entry-inner:last').append(formattedTitleSchool);
 
             var formattedOnlineDates = HTMLonlineDates.replace('%data%', education.onlineCourses[i].date);
-            $('.education-entry:last').append(formattedOnlineDates);
+            $('.education-entry-inner:last').append(formattedOnlineDates);
 
             var formattedOnlineURL = HTMLonlineURL.replace(/%data%/g, education.onlineCourses[i].url);
-            $('.education-entry:last').append(formattedOnlineURL);
+            $('.education-entry-inner:last').append(formattedOnlineURL);
         }
     }
 };

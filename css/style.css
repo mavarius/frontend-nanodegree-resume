@@ -1,5 +1,9 @@
 /* COLORS
-#1e1e1e
+	black
+	white
+	ghostwhite
+	deepskyblue
+	orange
 */
 
 /*Boostrap gap fix per Andrew Wilson on Stack Overflow*/
@@ -16,45 +20,214 @@ body {
 
 body {
 	font: 300 14px 'Titillium Web', sans-serif;
-	background: url(../images/noise.png);
-	background-color: black;
+	background: url(../images/backdrop.jpg) no-repeat center top;
+	background-attachment: fixed;
+	background-size: cover;
+	color: white;
+}
+
+section {
+	background: ghostwhite;
+	color: black;
+	margin: 70px 0;
+	padding: 0;
+}
+
+header {
+	padding: 2vh 0;
+	min-height: 100vh;
+	position: relative;
 }
 
 .biopic {
-	max-width: 100vw;
+	width: 100%;
 	border-radius: 50%;
 }
 
 h1 {
-	color: ghostwhite;
 	font: 300 3em 'Titillium Web', sans-serif;
 	text-align: center;
 	position: relative;
 	display: block;
+	margin: 0;
+}
+
+h2 {
+	font: 300 3em 'Titillium Web', sans-serif;
+	color: ghostwhite;
+	position: relative;
+	margin: -48px 0 0 15px;
+}
+
+.map-header {
+	display: none;
+}
+
+h3,
+h4,
+.entry-subtitle {
+	color: deepskyblue;
+	margin: 0;
+}
+
+h3 {
+	font: 300 2em 'Titillium Web', sans-serif;
+	clear: both;
+}
+
+.section-subtitle {
+	margin: 0 0 0 15px;
 }
 
 .header-role {
-	color: gainsboro;
 	font: 300 2em 'Titillium Web', sans-serif;
 	text-align: center;
 	display: block;
+}
+
+h1,
+.header-role,
+.welcome-message {
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, .5);
+}
+
+a {
+	color: orange;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+	color: deepskyblue;
+}
+
+.fa {
+	margin-right: 5px;
+}
+
+#topContacts {
+	font: 300 1em 'Titillium Web', sans-serif;
+	color: black;
 }
 
 .list-inline {
 	text-align: center;
 }
 
-#map {
-	display: block;
+.flex-item {
+	margin: 0 10px;
+}
+
+.skills {
+	position: absolute;
+	bottom: 2vh;
+	width: 100%;
+	clear: both;
+}
+
+.work-entry,
+.project-entry,
+.education-entry 	{
 	height: 100%;
-	margin: 0 5%;
+	margin: 0 0 6vh 0;
+}
+
+.project-image {
+	margin: 2vh auto 0 auto;
 }
 
 #map-div {
-	height: 400px;
-	width: 100%;
-	padding-bottom: 5%;
-	-moz-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
-	-webkit-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
-	box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
+	height: 100vw;
+}
+
+footer {
+	margin: 2vh 0;
+	text-align: center;
+}
+
+/* media queries */
+
+/* mobile portrait */
+@media (max-width: 567px) {
+	.biopic-box {
+		width: 60vmin;
+		margin: 10vh auto 5vh auto;
+		display: block;
+		position: relative;
+		padding: 0;
+		float: none;
+	}
+
+	#headerIntro {
+		width: 100vw;
+		margin: 0 auto;
+		float: none;
+	}
+}
+
+/* mobile landscape only */
+@media (min-width: 568px) and (max-width: 767px) {
+	.project-image {
+		max-width: 80%;
+	}
+}
+
+/* mobile landscape and up */
+@media (min-width: 568px) {
+	h1,
+	.header-role,
+	.welcome-message {
+		text-align: left;
+		position: relative;
+	}
+
+	.biopic-box {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	#headerIntro {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.map-header {
+		display: block;
+	}
+
+	#map-div {
+		height: 60vh;
+	}
+}
+
+/* tablet portrait and up */
+@media (min-width: 768px) {
+	header {
+		min-height: 60vh;
+	}
+
+	h1 {
+		font: 300 5vmax 'Titillium Web', sans-serif;
+	}
+
+	.header-role {
+		font: 300 2.5vmax 'Titillium Web', sans-serif;
+	}
+
+	.welcome-message {
+		font: 300 1.5vmax 'Titillium Web', sans-serif;
+	}
+}
+
+/* tablet landscape and up */
+@media (min-width: 992px) {}
+
+/* large displays */
+@media (min-width: 1200px) {
+	.skills,
+	#topContacts {
+		font: 300 1.1vmax 'Titillium Web', sans-serif;
+	}
 }

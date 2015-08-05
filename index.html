@@ -27,6 +27,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,9 +54,9 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 	you can't accomplish with vanilla (regular) JavaScript.
 	-->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script async src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
-    <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<!-- More on helper.js in the class -->
 	<script src="js/helper.js"></script>
@@ -68,33 +70,34 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   	<meta name="viewport" content="width=device-width">
 </head>
 <body>
-	<div id="main">
+	<div id="main" class="container-fluid">
 		<!--
 		Everything from here to the <script> tag below is the skeleton of your
 		website. Your code will add information to each of the sections of the
 		resume below. You can pretty easily figure out what each section will
 		display by looking at the id or at what's written between the <h2> tags.
 		-->
-		<header id="header">
-			<ul id="topContacts"></ul>
+		<header id="header" class="row">
+			<ul id="topContacts" class="list-inline"></ul>
 		</header>
-		<div id="workExperience" class="">
+		<section id="workExperience" class="row">
 			<h2>Work Experience</h2>
-		</div>
-		<div id="projects">
+		</section>
+		<section id="projects" class="row">
 			<h2>Projects</h2>
-		</div>
-		<div id="education" class="">
+		</section>
+		<section id="education" class="row">
 			<h2>Education</h2>
-		</div>
-		<div id="map-div">
-			<h2>Where I've Lived and Worked</h2>
-		</div>
-		<div id="lets-connect" class="">
+		</section>
+		<section id="mapSection" class="row">
+			<h2 class="map-header">Where I've Lived and Worked</h2>
+			<div id="map-div"></div>
+		</section>
+		<footer id="lets-connect" class="row">
 			<h2 class="center-text">Let's Connect</h2>
-			<ul id="footerContacts">
+			<ul id="footerContacts" class="list-inline">
 			</ul>
-		</div>
+		</footer>
 	</div>
 
   <!--
